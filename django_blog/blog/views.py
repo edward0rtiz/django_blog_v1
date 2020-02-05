@@ -1,7 +1,11 @@
-from django.shortcuts import render
 # from django.http import HttpResponse
+from django.shortcuts import render
+from .models import Post
 
-posts = [
+# import post
+
+
+"""posts = [
     {
         'author': 'Edward0rtiz',
         'title': 'Blog Post 1',
@@ -14,14 +18,14 @@ posts = [
         'content': 'Second post content',
         'date_posted': 'February 5, 2020'
     }
-]
+]"""
 
 # fun to handle traffic from home.
 
 
 def home(request):
     context = {
-        'posts': posts
+        'posts': Post.objects.all()
     }
     return render(request, 'blog/home.html', context)
 
